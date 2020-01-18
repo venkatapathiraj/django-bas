@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container-fluid ">
+        <form action="" class="form-group w-50">
+            <label for="">name</label>
+            <input type="text" class="form-control" id="name" required>
+            <label for="">DateofBirth</label>
+            <input type="date" class="form-control" id="dob"required>
+            <label for="">empid</label>
+            <input type="text" class="form-control" id="empid" required>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="chk" onclick="check()">
+                <label for="" class="form-check-label">i have read and agreed <u>Terms And Conditions</u></label>
+            </div>
+            <button type="submit" id="butn" class="btn btn-primary mt-2 d-none" onclick="wish()">submit</button>
+        </form>
+    </div>
+</body>
+<script>
+    function check(){
+        var a = document.getElementById("name").value
+        var b = document.getElementById("dob").value
+        var c = document.getElementById("empid").value
+        var x = document.getElementById("chk").checked
+        if(!a=="" && !b=="" && !c==""){
+            if(x==true){
+                document.getElementById("butn").classList.remove("d-none")
+            }else{
+                alert("please Agree the terms and conditons and submit")
+                document.getElementById("butn").classList.add("d-none")
+            }
+        }else{
+            alert("please fill all the fiels")
+            document.getElementById("chk").checked=false
+        }
+}
+function wish(){
+    document.write('<h1 class="text-secondary text-center">THANK YOU</h1>')
+}
+</script>
+</html>
