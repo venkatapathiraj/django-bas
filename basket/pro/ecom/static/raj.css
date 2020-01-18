@@ -1,0 +1,29 @@
+h5{
+    font-size:16px !important;
+}
+
+h6{
+    font-size: 10px !important;
+}
+
+.card{
+    min-width: 20% !important;
+    max-width: 22.8% !important;
+}
+.card:hover{
+    box-shadow: 0px 1px 8px 2px lightgray !important;
+    transform: translateY(-5px);
+}
+.fa{
+    animation-name: pop !important;
+    animation-duration: 10s !important;
+
+}
+
+@keyframes pop{
+    0% {font-size:10px !important;}
+    25% {front-size:40px !important;}
+    50% {front-size:30px !important;}
+    100% {front-size:25px !important;}
+
+}

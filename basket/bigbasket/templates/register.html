@@ -1,0 +1,55 @@
+{% load static %}
+{% static "image" as baseurl %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'raj.css' %}" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <title>Bigbasket</title>
+</head>
+<body>
+    <div class="contianer-fluid d-flex justify-content-center align-items-center">
+        <form class="form-group w-25" action="" method="POST">
+            {% csrf_token %}
+            <h2 class="text-secondary">Register Here</h2>
+            <label for="first_name"><b>FirstName:</b></label>
+            <input class="form-control" type="text" name="first_name" placeholder="firstname">
+            <label for="first_name"><b>LastName:</b></label>
+            <input class="form-control" type="text" name="last_name" placeholder="lastname">
+            <label for="first_name"><b>UserName:</b></label>
+            <input class="form-control" type="text" name="username" placeholder="username">
+            <label for="first_name"><b>Email:</b></label>
+            <input class="form-control" type="email" name="email" placeholder="email">
+            <label for="first_name"><b>Password:</b></label>
+            <input class="form-control" type="password" name="password1" placeholder="password">
+            <label for="first_name"><b>Confirm Password:</b></label>
+            <input class="form-control" type="password" name="password2" placeholder="confirm password">
+            <input class="btn btn-success mt-3" type="submit">
+        </form>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        {% for message in messages %}
+        <h4 class="text-{{ label }} text-center alert alert-{{ label }} alert-dismissible fade show w-25">{{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </h4>
+        {% endfor %}    
+    </div>
+</body>
+</html>
